@@ -7,18 +7,16 @@ import SearchIcon from '@material-ui/icons/Search';
 export default function Search(props) {
     const { classes, onChange } = props;
     return (
-        <form noValidate>
-            <Paper component="form" className={classes.root}>
-                <InputBase
-                    className={classes.input}
-                    placeholder="Search News"
-                    inputProps={{ 'aria-label': 'Search News' }}
-                    onChange={onChange}
-                />
-                <IconButton type="submit" className={classes.iconButton} aria-label="search">
-                    <SearchIcon />
-                </IconButton>
-            </Paper>
-        </form>
+        <Paper component="form" className={classes.root}>
+            <InputBase
+                className={classes.input}
+                placeholder="Search News"
+                inputProps={{ 'aria-label': 'Search News' }}
+                onChange={onChange}
+            />
+            <IconButton type="submit" className={classes.iconButton} aria-label="search">
+                <SearchIcon />
+            </IconButton>
+        </Paper>
     )
 }

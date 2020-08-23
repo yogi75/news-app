@@ -20,6 +20,9 @@ export default function NewsContainer() {
         }
         fetchData(querryParams).then(response => {
             console.log("data- ", response);
+            response.articles.forEach((item, key) => {
+                response.articles[key].key = key + 1;
+            })
             setNews(response.articles);
             setResponse(response.articles)
         }).catch(error => {
@@ -51,7 +54,7 @@ export default function NewsContainer() {
                 <Container className={classes.cardGrid} maxWidth="md">
                     <Grid container spacing={4}>
                         {news && news.map((item, key) => (
-                            <NewsComponent classes={classes} item={item} itemKey={key} />
+                            <NewsComponent classes={classes} item={item} key={item.key} />
                         ))}
                     </Grid>
                 </Container>
